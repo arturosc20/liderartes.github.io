@@ -1,0 +1,1 @@
+// App.js - JavaScript para Liderartes
