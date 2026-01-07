@@ -57,7 +57,190 @@
         </div>
     </header>
     <main class="container">
-       
+        <!-- Sección 1: Egresados en Acción -->
+        <section class="egresados-section">
+            <h2>Egresados en Acción</h2>
+            <p class="section-description">Conoce las historias de éxito de nuestros egresados que están transformando sus vidas y comunidades a través del arte.</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="egresados-carousel">
+                        <!-- Egresado 1 -->
+                        <div class="carousel-slide active">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/egresado1.png" alt="Egresado 1">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        Liderartes cambió mi vida completamente. Aprendí a dibujar y ahora trabajo como ilustrador freelance. El arte me dio la oportunidad de salir adelante y ayudar a mi familia.
+                                    </blockquote>
+                                    <cite>- María González, Egresada Taller de Dibujo 2023</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Egresado 2 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/egresado2.png" alt="Egresado 2">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        Gracias a los talleres de oratoria, ahora soy líder de mi comunidad y ayudo a otros jóvenes. Liderartes me enseñó que el arte puede ser una herramienta de transformación social.
+                                    </blockquote>
+                                    <cite>- Carlos Mendoza, Egresado Taller de Oratoria 2023</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Egresado 3 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/egresado3.png" alt="Egresado 3">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        La escultura me permitió expresar mis emociones y encontrar paz interior. Ahora enseño a otros niños en mi barrio y hemos creado un grupo artístico comunitario.
+                                    </blockquote>
+                                    <cite>- Ana Ríos, Egresada Taller de Escultura 2023</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Egresado 4 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/egresado4.png" alt="Egresado 4">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        El arte del anime y manga me conectó con una comunidad global. Hoy vendo mis ilustraciones en línea y estoy estudiando diseño gráfico gracias a la base que obtuve aquí.
+                                    </blockquote>
+                                    <cite>- Diego Torres, Egresado Taller de Anime y Manga 2023</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="changeSlide('egresados-carousel', -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="changeSlide('egresados-carousel', 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlide('egresados-carousel', 1)"></span>
+                    <span class="indicator" onclick="currentSlide('egresados-carousel', 2)"></span>
+                    <span class="indicator" onclick="currentSlide('egresados-carousel', 3)"></span>
+                    <span class="indicator" onclick="currentSlide('egresados-carousel', 4)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Becarios 2026 -->
+        <section class="becarios-section">
+            <h2>Becarios 2026</h2>
+            <p class="section-description">Conoce a los nuevos becarios de Liderartes que están iniciando su viaje artístico con gran entusiasmo y talento.</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="becarios-carousel">
+                        <!-- Becario 1 -->
+                        <div class="carousel-slide active">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/becario1.png" alt="Becario 1">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        Estoy muy emocionada de formar parte de Liderartes. Siempre quise aprender a dibujar y ahora tengo la oportunidad. Sueño con ser una gran artista y inspirar a otros niños.
+                                    </blockquote>
+                                    <cite>- Sofía Herrera, Becaria Taller de Dibujo 2026</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Becario 2 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/becario2.png" alt="Becario 2">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        Mi familia no podía pagar clases de arte, pero gracias a la beca de Liderartes puedo cumplir mi sueño. Quiero usar el arte para cambiar mi comunidad.
+                                    </blockquote>
+                                    <cite>- Andrés Vásquez, Becario Taller de Pintura 2026</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Becario 3 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/becario3.png" alt="Becario 3">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        La oratoria me ayudará a vencer mi timidez y a expresar mejor mis ideas. Espero convertirme en una líder que pueda ayudar a otros jóvenes como yo.
+                                    </blockquote>
+                                    <cite>- Lucía Morales, Becaria Taller de Oratoria 2026</cite>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Becario 4 -->
+                        <div class="carousel-slide">
+                            <div class="testimonio-card">
+                                <div class="testimonio-imagen">
+                                    <img src="img/becario4.png" alt="Becario 4">
+                                </div>
+                                <div class="testimonio-contenido">
+                                    <blockquote>
+                                        Crear esculturas es como dar vida a mis ideas. En Liderartes he encontrado un lugar donde puedo ser yo mismo y explorar mi creatividad sin límites.
+                                    </blockquote>
+                                    <cite>- Roberto Chávez, Becario Taller de Escultura 2026</cite>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles del carrusel -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="changeSlide('becarios-carousel', -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="changeSlide('becarios-carousel', 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlide('becarios-carousel', 1)"></span>
+                    <span class="indicator" onclick="currentSlide('becarios-carousel', 2)"></span>
+                    <span class="indicator" onclick="currentSlide('becarios-carousel', 3)"></span>
+                    <span class="indicator" onclick="currentSlide('becarios-carousel', 4)"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Espacio para futura sección -->
+        <section class="futura-seccion">
+            <!-- Esta sección está lista para agregar contenido adicional -->
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Liderartes. Todos los derechos reservados.</p>

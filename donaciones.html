@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style/styles.css">
     <script defer src="js/app.js"></script>
 </head>
-<body>
+<body class="donaciones-page">
     <header>
         <div class="container">
             <div class="logo-container">
@@ -57,7 +57,47 @@
         </div>
     </header>
     <main class="container">
-       
+        <!-- Sección: Afíliate -->
+        <section class="contact-section full-width">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Afíliate</h2>
+                        <p>Si quieres ser parte de nosotros e impulsar el talento artístico de muchos niños.</p>
+                        <br>
+                        <p><strong>¿Qué estás esperando?</strong></p>
+                        <br>
+                        <p>Afíliate, con tu apoyo podremos continuar avanzando y creciendo.</p>
+                    </div>
+                    <div class="contact-form-column">
+                        <h3 class="form-title">Regístrate aquí:</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" name="apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos cómo te gustaría apoyar a Liderartes..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Afiliarme</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Liderartes. Todos los derechos reservados.</p>

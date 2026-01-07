@@ -75,3 +75,121 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: false });
 });
+
+// === FUNCIONES PARA CARRUSELES DE NOVEDADES === //
+
+// Variables globales para los carruseles
+let slideIndexes = {};
+
+// Función para cambiar slide
+function changeSlide(carouselId, direction) {
+    if (!slideIndexes[carouselId]) {
+        slideIndexes[carouselId] = 0;
+    }
+    
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.closest('.carousel-container').querySelectorAll('.indicator');
+    
+    // Remover clase active del slide actual
+    slides[slideIndexes[carouselId]].classList.remove('active');
+    indicators[slideIndexes[carouselId]].classList.remove('active');
+    
+    // Calcular nuevo índice
+    slideIndexes[carouselId] += direction;
+    
+    // Verificar límites
+    if (slideIndexes[carouselId] >= slides.length) {
+        slideIndexes[carouselId] = 0;
+    } else if (slideIndexes[carouselId] < 0) {
+        slideIndexes[carouselId] = slides.length - 1;
+    }
+    
+    // Agregar clase active al nuevo slide
+    slides[slideIndexes[carouselId]].classList.add('active');
+    indicators[slideIndexes[carouselId]].classList.add('active');
+    
+    // Animar el carrusel
+    const offset = -slideIndexes[carouselId] * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
+
+// Función para ir a un slide específico
+function currentSlide(carouselId, slideNumber) {
+    if (!slideIndexes[carouselId]) {
+        slideIndexes[carouselId] = 0;
+    }
+    
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.closest('.carousel-container').querySelectorAll('.indicator');
+    
+    // Remover clase active del slide actual
+    slides[slideIndexes[carouselId]].classList.remove('active');
+    indicators[slideIndexes[carouselId]].classList.remove('active');
+    
+    // Establecer nuevo índice
+    slideIndexes[carouselId] = slideNumber - 1;
+    
+    // Agregar clase active al nuevo slide
+    slides[slideIndexes[carouselId]].classList.add('active');
+    indicators[slideIndexes[carouselId]].classList.add('active');
+    
+    // Animar el carrusel
+    const offset = -slideIndexes[carouselId] * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
+
+// Inicializar carruseles cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar índices de carruseles
+    const carousels = document.querySelectorAll('.carousel-slides');
+    carousels.forEach(carousel => {
+        slideIndexes[carousel.id] = 0;
+    });
+    
+    // Autoplay para los carruseles (opcional)
+    function startAutoplay(carouselId, interval = 5000) {
+        return setInterval(() => {
+            changeSlide(carouselId, 1);
+        }, interval);
+    }
+    
+    // Activar autoplay solo en la página de novedades
+    if (window.location.pathname.includes('novedades.html')) {
+        let egresadosAutoplay = startAutoplay('egresados-carousel', 6000);
+        let becariosAutoplay = startAutoplay('becarios-carousel', 6500);
+        
+        // Pausar autoplay cuando el usuario interactúa con el carrusel
+        const carouselContainers = document.querySelectorAll('.carousel-container');
+        carouselContainers.forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                clearInterval(egresadosAutoplay);
+                clearInterval(becariosAutoplay);
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                egresadosAutoplay = startAutoplay('egresados-carousel', 6000);
+                becariosAutoplay = startAutoplay('becarios-carousel', 6500);
+            });
+        });
+    }
+});
+
+// Soporte para navegación con teclado
+document.addEventListener('keydown', function(e) {
+    // Solo funciona en la página de novedades
+    if (!window.location.pathname.includes('novedades.html')) return;
+    
+    if (e.key === 'ArrowLeft') {
+        changeSlide('egresados-carousel', -1);
+        changeSlide('becarios-carousel', -1);
+    } else if (e.key === 'ArrowRight') {
+        changeSlide('egresados-carousel', 1);
+        changeSlide('becarios-carousel', 1);
+    }
+});
