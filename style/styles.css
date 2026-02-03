@@ -5,6 +5,22 @@
     box-sizing: border-box;
 }
 
+/* Mensaje temporal */
+.temporary-message {
+    background-color: #f39c12;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.temporary-message p {
+    margin: 0;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
 body {
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
     line-height: 1.6;
